@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta
+    name="description"
+    content="This file, pronto_demo.html, demonstrates pronto.js. It uses pronto_demo.js."
+>
+<title>The Pronto Demonstration</title>
+<style>
+@font-face {
+    font-family: 'Programma';
+    font-weight: bold;
+    src: url('https://www.crockford.com/woff/Programma-Bold.woff2') format('woff2');
+}
+
+#demo {
+    line-height: 4em;
+    overflow-wrap: normal;
+    white-space: normal;
+    word-break: normal;
+}
+
+#demo span {
+    background-color: antiquewhite;
+    border: 2pt solid black;
+    font-family: Programma, mono;
+    font-size: 112.5%;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 1em;
+    padding: 0.5em;
+    white-space: nowrap;
+}
+
+#demo span.success {
+    background-color: palegreen;
+}
+
+#demo span.failure {
+    background-color: pink;
+}
+
+#demo span.cancelled {
+    background-color: lightgray;
+}
+
+#demo input, #choice input {
+    border: 2pt solid black;
+    border-radius: 1em;
+    cursor: pointer;
+    font-family: Programma, mono;
+    font-size: 112.5%;
+    font-style: normal;
+    font-weight: bold;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+#source, #demo, #choice {
+    background-color: whitesmoke;
+    border: 2pt solid black;
+    border-radius: 1em;
+    font-family: Programma, mono;
+    font-size: 112.5%;
+    font-style: normal;
+    font-weight: bold;
+    margin: 1em;
+    padding: 1em;
+}
+
+#demo span input[name=success] {
+    background-color: palegreen;
+}
+
+#demo span input[name=failure] {
+    background-color: pink;
+}
+
+#demo span input[name=success]:hover {
+    background-color: green;
+    color: white;
+}
+
+#demo span input[name=failure]:hover {
+    background-color: red;
+    color: white;
+}
+
+#demo span[class] input[name] {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+#also {
+    background-color: linen;
+    border: 2pt solid black;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1em;
+}
+
+#also div::before {
+    content: "⏵ ";
+}
+
+#also div {
+    cursor: pointer;
+    font-size: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+body {
+    background-color: #bfb6a7;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+a, #also div {
+    text-decoration: none;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: maroon;
+}
+a:hover, #also div:hover {
+    background-color: yellow;
+    color: blue;
+    text-decoration: underline;
+}
+a:active {
+    color: red;
+}
+</style>
+</head>
+<body><noscript>Nothing good happens without JavaScript.</noscript>
+<h1>The Pronto Demonstration</h1>
+<div id=choice></div>
+<div id=demo><span><input name=success type=button value="+"><input name=failure type=button value="-"></span></div>
+<pre id=source></pre>
+<script
+    src="./pronto_demo.js"
+    type="module"
+></script>
+<div id=also>
+<div><a href="https://www.crockford.com/pronto.html">About Pronto</a></div>
+<div id="widget_source">Widget source</div>
+<div id="proto_widget">Proto widget</div>
+<div><a href="https://github.com/douglascrockford/Pronto">Pronto on GitHub</a></div></div>
+</body></html>
