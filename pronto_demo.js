@@ -1,5 +1,5 @@
 // pronto_demo.js
-// 2025-10-30
+// 2025-10-31
 
 // This is used by pronto_demo.html to demonstrate pronto.js. It includes a widget
 // function that represents a service factory, a show callback that displays the
@@ -25,11 +25,11 @@ import pronto from "./pronto.js";
 const choice = document.getElementById("choice");
 const demo = document.getElementById("demo");
 const source = document.getElementById("source");
-const proto = demo.removeChild(demo.firstChild);
+const proto_widget = demo.removeChild(demo.firstChild);
 
 function widget(name) {
     return function widget_requestor(callback, value) {
-        let span = proto.cloneNode(true);
+        let span = proto_widget.cloneNode(true);
         let success = span.firstChild;
         let failure = span.children[1];
         span.prepend(name);
@@ -61,7 +61,7 @@ function widget(name) {
 }
 
 function show(value, reason) {
-    let span = proto.cloneNode(true);
+    let span = proto_widget.cloneNode(true);
     let result;
     let status;
     if (value !== undefined) {
@@ -299,7 +299,7 @@ document.getElementById("widget_source").addEventListener(
 document.getElementById("proto_widget").addEventListener(
     "click",
     function (ignore) {
-        demo.replaceChildren();
-        source.replaceChildren(proto.outerHTML);
+        demo.replaceChildren(proto_widget);
+        source.replaceChildren(proto_widget.outerHTML);
     }
 );
