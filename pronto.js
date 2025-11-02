@@ -1,6 +1,6 @@
 // pronto.js
 // Douglas Crockford
-// 2025-10-30
+// 2025-11-01
 
 // You can access the pronto object by importing it.
 //      import pronto from "./pronto.js";
@@ -305,7 +305,7 @@ function race(requestor_array, throttle, need) {
                 && (need > requestor_array.length || need === 0)
             )
         ) {
-            throw make_reason("parallel", "Bad need.", need);
+            throw make_reason("race", "Bad need.", need);
         }
         needed = need;
         singleton = false;
